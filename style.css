@@ -4,20 +4,26 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-p {
-  margin: 0px;
-}
 
-.header, .links, .header-panel, .title, .image, .info-panel, .images, .image-caption, .call-panel, .quote-panel, .footer {
+.header-panel, .header, .header-logo, .links, .title-panel, .title, .image, .info-panel, .images, .image-caption, .quote-panel, .call-panel, .call-button .footer {
   display: flex;
 }
 
-.big-header {
+.header-panel, .title-panel, .footer {
   background-color: #1f2937;
   color: white;
 }
 
-.header, .header-panel {
+.header-panel, .info-panel, .images, .image-caption, .quote-panel, .call-panel {
+  padding-left: 320px;
+  padding-right: 320px;
+}
+
+.header-panel {
+  flex-direction: column;
+}
+
+.header, .title-panel {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -25,16 +31,18 @@ p {
 
 .header {
   margin-bottom: 64px;
-  size: 24px;
+  font-size: 24px;
   color: #F9FAF8;
 }
 
-.header-panel {
-  margin-bottom:34px;
+.links {
+  justify-content: flex-end;
+gap: 40px;
+font-size: 18px;
 }
 
-.links {
-  gap: 10px;
+.title-panel {
+  margin-bottom:34px;
 }
 
 .title {
@@ -54,6 +62,15 @@ p {
   color: #E5E7EB;
 }
 
+.title button {
+  width: 112px;
+  height: 24px;
+  color: white;
+  background-color: #3882f6;
+  border-radius: 5px;
+  border: #3882f6;
+}
+
 .image {
   justify-content: center;
   align-items: center; 
@@ -66,7 +83,11 @@ p {
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
-  font-size: 36px #1F2937;
+}
+
+.info-panel p {
+  color: #1F2937;
+  font-size: 36px;
   font-weight: 900px;
 }
 
@@ -86,39 +107,55 @@ p {
 }
 
 .image-caption p {
+  margin: 0;
   justify-content: center;
   width: 120px;
   height: 120px;
 }
 
 .quote-panel {
+  flex-direction: column;
   font-size: 36px;
   font: light italic;
   color: #1f2937;
   background-color: #E5E7EB;
+  padding: 120px;
 }
 
-.quote-panel h1 {
-  justify-content: baseline;
-  align-items: baseline;
+.quote-panel .name {
+  display: flex;
+  justify-content: flex-end;
   font-size: 26px;
 }
 
 .call-panel {
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background-color: #3882f6;
   margin: 60px;
+  padding: 40px;
+  border-radius: 10px;
 }
+
+.call-text {
+  flex-direction: column;
+}
+
 .call-panel button {
+  align-items: baseline;
+  width: 112px;
+  height: 24px;
   flex-direction: row;
+  border-color: #F9FAF8;
+  color: #F9FAF8;
+  background-color: #3882f6;
+  border-radius: 5px;
+  border-style: solid;
 }
 
 .footer {
+  align-items: center;
+  justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  justify-content: center;
-  background-color: #1f2937;
-  color: white;
 }
